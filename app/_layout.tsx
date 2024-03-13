@@ -1,7 +1,6 @@
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 // import { RecoilRoot } from "recoil";
-import "../global.css";
 import { useCallback, useEffect, useState } from "react";
 import {
   useFonts,
