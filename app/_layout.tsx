@@ -18,7 +18,7 @@ import {
 import { RecoilRoot } from "recoil";
 
 SplashScreen.preventAutoHideAsync();
-export default function RootLayoutNav() {
+export default function RootLayout() {
   const [fontsLoaded] = useFonts({
     Poppins_100Thin,
     Poppins_200ExtraLight,
