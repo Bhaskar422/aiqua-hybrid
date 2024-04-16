@@ -1,7 +1,4 @@
 import { Stack } from "expo-router";
-import * as SplashScreen from "expo-splash-screen";
-// import { RecoilRoot } from "recoil";
-import { useCallback, useEffect, useState } from "react";
 import {
   useFonts,
   Poppins_100Thin,
@@ -15,10 +12,8 @@ import {
   Poppins_900Black,
 } from "@expo-google-fonts/poppins";
 import { RecoilRoot } from "recoil";
-
-SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
-  const [fontsLoaded] = useFonts({
+  const [fontsLoaded, fontError] = useFonts({
     Poppins_100Thin,
     Poppins_200ExtraLight,
     Poppins_300Light,
@@ -30,21 +25,7 @@ export default function RootLayout() {
     Poppins_900Black,
   });
 
-  useEffect(() => {
-    async function prepare() {
-      await SplashScreen.preventAutoHideAsync();
-    }
-    prepare();
-  }, []);
-
-  //   const onLayoutRootView = useCallback(async () => {
-  if (fontsLoaded) {
-    SplashScreen.hideAsync();
-  }
-  [];
-  //   }, [fontsLoaded]);
-
-  if (!fontsLoaded) {
+  if (!fontsLoaded && !fontError) {
     return null;
   }
 
